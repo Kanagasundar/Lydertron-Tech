@@ -572,7 +572,7 @@ input, textarea, select {
 }
 
 .hero-bg {
-    background: url('img/image1.png') center/cover no-repeat;
+    background: url('./img/image1.png') center/cover no-repeat;
     background-attachment: fixed;
     filter: brightness(0.15) saturate(0.6) blur(2px);
 }
@@ -887,7 +887,7 @@ input, textarea, select {
 }
 
 .services-bg {
-    background: url('img/image7.jpeg') center/cover no-repeat;
+    background: url('./img/image7.jpeg') center/cover no-repeat;
     background-attachment: fixed;
     filter: brightness(0.12) saturate(0.4) blur(2px);
 }
@@ -995,7 +995,7 @@ input, textarea, select {
 }
 
 .expertise-bg {
-    background: url('img/image8.jpg') center/cover no-repeat;
+    background: url('./img/image8.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: brightness(0.1) saturate(0.4) blur(2px);
 }
@@ -1112,7 +1112,7 @@ input, textarea, select {
 }
 
 .products-bg {
-    background: url('img/image5.jpg') center/cover no-repeat;
+    background: url('./img/image5.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: brightness(0.1) saturate(0.4) blur(2px);
 }
@@ -1318,7 +1318,7 @@ input, textarea, select {
 }
 
 .why-us-bg {
-    background: url('img/image4.jpg') center/cover no-repeat;
+    background: url('./img/image4.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: brightness(0.12) saturate(0.4) blur(2px);
 }
@@ -1456,7 +1456,7 @@ input, textarea, select {
 }
 
 .contact-bg {
-    background: url('img/image10.jpg') center/cover no-repeat;
+    background: url('./img/image10.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: brightness(0.1) saturate(0.4) blur(2px);
 }
