@@ -1826,6 +1826,94 @@ input, textarea, select {
     }
     
     .carousel-btn { width: 44px; height: 44px; font-size: 1rem; }
+    
+    /* Services Section Mobile Fix */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .service-card {
+        padding: var(--space-lg);
+    }
+    
+    .service-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    /* Expertise Section Mobile Fix */
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise-card {
+        padding: var(--space-lg);
+    }
+    
+    .expertise-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .expertise-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .expertise-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .brand-tags {
+        justify-content: center;
+    }
+    
+    /* Contact Section Mobile Fix */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-details {
+        align-items: center;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .contact-form-container {
+        padding: var(--space-lg);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: var(--space-md);
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+    
     .footer-content { grid-template-columns: 1fr; text-align: center; }
     .footer-links ul { align-items: center; }
     .footer-contact p { justify-content: center; }

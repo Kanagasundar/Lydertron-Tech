@@ -247,15 +247,27 @@ function initProductCarousel() {
     
     const cards = track.querySelectorAll('.product-card');
     const cardCount = cards.length;
-    const cardWidth = 350 + 32; // card width + gap
     let currentIndex = 0;
+    
+    // Dynamically get card width including gap
+    function getCardWidth() {
+        if (cards.length === 0) return 382; // fallback
+        const card = cards[0];
+        const style = window.getComputedStyle(card);
+        const cardWidth = card.offsetWidth;
+        const gap = parseInt(window.getComputedStyle(track).gap) || 32;
+        return cardWidth + gap;
+    }
+    
+    let cardWidth = getCardWidth();
     let visibleCards = getVisibleCards();
     let maxIndex = Math.max(0, cardCount - visibleCards);
     
     // Calculate visible cards based on screen width
     function getVisibleCards() {
         const containerWidth = track.parentElement.offsetWidth;
-        return Math.floor(containerWidth / cardWidth) || 1;
+        const currentCardWidth = getCardWidth();
+        return Math.max(1, Math.floor(containerWidth / currentCardWidth));
     }
     
     // Create dots
@@ -282,6 +294,7 @@ function initProductCarousel() {
     
     // Update carousel position
     function updateCarousel() {
+        cardWidth = getCardWidth(); // Recalculate on each update
         const offset = currentIndex * cardWidth;
         track.style.transform = `translateX(-${offset}px)`;
         
