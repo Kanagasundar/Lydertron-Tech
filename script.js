@@ -482,14 +482,25 @@ function initContactForm() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Success feedback
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.style.background = 'var(--color-success)';
-                
-                // Reset form
-                form.reset();
+            // Submit to Web3Forms
+            const formData = new FormData(form);
+            
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Success feedback
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.style.background = 'var(--color-success)';
+                    form.reset();
+                } else {
+                    // Error feedback
+                    submitBtn.innerHTML = '<i class="fas fa-times"></i> Failed to Send';
+                    submitBtn.style.background = 'var(--color-error)';
+                }
                 
                 // Reset button after delay
                 setTimeout(() => {
@@ -497,7 +508,18 @@ function initContactForm() {
                     submitBtn.style.background = '';
                     submitBtn.disabled = false;
                 }, 3000);
-            }, 1500);
+            })
+            .catch(error => {
+                console.error('Form submission error:', error);
+                submitBtn.innerHTML = '<i class="fas fa-times"></i> Network Error';
+                submitBtn.style.background = 'var(--color-error)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
         } else {
             // Scroll to first error
             const firstError = form.querySelector('.form-group.error');
